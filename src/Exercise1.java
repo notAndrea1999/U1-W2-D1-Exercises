@@ -19,7 +19,8 @@ public class Exercise1 {
             try {
                 System.out.println("Che posizione vuoi modificare");
                 int posizione = Integer.parseInt(input.nextLine()) - 1;
-                if (posizione < 0 || posizione >= 5) throw new Exception("Hai superato la grandezza dell'array");
+//                if (posizione < 0 || posizione >= 5)
+//                    throw new ArrayIndexOutOfBoundsException("Hai superato la grandezza dell'array");
                 System.out.println("Scegli il numero che sostituira quello precendete");
                 int number = Integer.parseInt(input.nextLine());
                 if (number == 0) {
@@ -28,7 +29,7 @@ public class Exercise1 {
                     myArr[posizione] = number;
                 }
 
-            } catch (Exception ex) {
+            } catch (ArrayIndexOutOfBoundsException ex) {
                 System.err.println(ex);
 
             } finally {
