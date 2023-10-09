@@ -1,0 +1,2 @@
+public class Exerise3 {
+}
