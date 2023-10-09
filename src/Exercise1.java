@@ -8,7 +8,45 @@ public class Exercise1 {
         Random rndm = new Random();
         Scanner input = new Scanner(System.in);
 
+        for (int i = 0; i < myArr.length; i++) {
+            myArr[i] = rndm.nextInt(1, 10);
+        }
+        System.out.println((Arrays.toString(myArr)));
 
+        sostituzioneArray:
+        while (true) {
+            System.out.println("Scegli un numero da mettere nell'array, quando ti sei stancato premi 0");
+            try {
+                System.out.println("Che posizione vuoi modificare");
+                int posizione = Integer.parseInt(input.nextLine()) - 1;
+                if (posizione < 0 || posizione >= 5) throw new Exception("Hai superato la grandezza dell'array");
+                System.out.println("Scegli il numero che sostituira quello precendete");
+                int number = Integer.parseInt(input.nextLine());
+                if (number == 0) {
+                    break sostituzioneArray;
+                } else {
+                    myArr[posizione] = number;
+                }
+
+            } catch (Exception ex) {
+                System.err.println(ex);
+
+            } finally {
+                System.out.println(Arrays.toString(myArr));
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /*
         for (int i = 0; i < myArr.length; i++) {
             myArr[i] = rndm.nextInt(1, 10);
         }
@@ -35,6 +73,8 @@ public class Exercise1 {
                 }
             }
         }
+        */
+
 
     }
 
